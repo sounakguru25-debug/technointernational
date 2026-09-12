@@ -1,0 +1,7 @@
+import { createFileRoute, Link } from '@tanstack/react-router'
+import { ArrowRight, Clock3, Mail, MapPin, Phone } from 'lucide-react'
+import { PageHero, SiteLayout } from '@/components/SiteLayout'
+import { address } from '@/data/site'
+
+export const Route = createFileRoute('/contact')({ component: Contact })
+function Contact(){ return <SiteLayout><PageHero eyebrow="Contact TINT" title="Let’s talk about your next step." copy="Reach the institute for programme guidance, admissions support or help planning a visit to the New Town campus."/><section className="contact-grid section"><div className="contact-panel"><p className="eyebrow light">Get in touch</p><h2>We’re here to help.</h2><a href="tel:+913323243878"><Phone/><span><small>Call the institute</small>+91 33 2324 3878</span><ArrowRight/></a><a href="mailto:info@tint.edu.in"><Mail/><span><small>Email</small>info@tint.edu.in</span><ArrowRight/></a><Link to="/directions"><MapPin/><span><small>Campus</small>{address}</span><ArrowRight/></Link></div><div className="visit-panel"><img src="/images/library.jpg" alt="Students studying together in a university library"/><div><Clock3/><span><small>Suggested visiting hours</small><strong>Monday–Saturday · 10:00–16:00</strong><p>Call ahead on institutional holidays or during examination periods.</p></span></div></div></section><section className="contact-cta"><h2>Looking for programme information?</h2><Link to="/courses" className="button navy">Browse all courses <ArrowRight size={18}/></Link></section></SiteLayout> }
